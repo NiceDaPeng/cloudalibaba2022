@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dapeng.springcloud.dao.PaymentDao">
+
+<!--    useGeneratedKeys表示是否需要返回值keyProperty表示返回的是id 如果大于0表示成功，小于0 表示失败-->
+    <insert id="create" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment (serial) values (#{serial});
+    </insert>
+
+    <resultMap id="BaseResultMap" type="com.dapeng.springcloud.entities.Payment">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="serial" property="serial" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getPaymentById" parameterType="Long" resultMap="BaseResultMap">
+        select * from payment where id = #{id};
+    </select>
+
+</mapper>

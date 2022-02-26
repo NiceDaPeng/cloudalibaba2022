@@ -1,0 +1,10 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consumer-order
+  cloud:
+    zookeeper:
+      connect-string: 192.168.110.244:2181  # 注册到zookeeper ip：port是zookeeper对应的
+
