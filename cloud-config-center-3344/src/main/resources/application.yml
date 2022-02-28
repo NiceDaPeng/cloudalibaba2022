@@ -1,0 +1,18 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri:  git@github.com:NiceDaPeng/springcloud-config.git # 填写你自己的github路径
+          search-paths:
+            - springcloud-config
+          force-pull: true
+      label: master
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:7001/eureka
