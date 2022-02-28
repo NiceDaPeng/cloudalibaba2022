@@ -7,12 +7,26 @@ spring:
     config:
       server:
         git:
-          uri:  git@github.com:NiceDaPeng/springcloud-config.git # 填写你自己的github路径
+          uri:  https://github.com/NiceDaPeng/springcloud-config.git # 填写你自己的github路径
           search-paths:
             - springcloud-config
           force-pull: true
       label: master
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
 eureka:
   client:
     service-url:
       defaultZone:  http://localhost:7001/eureka
+
+# rabbitmq的相关配置，暴露bus刷新配置的端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
