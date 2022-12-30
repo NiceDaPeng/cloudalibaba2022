@@ -1,0 +1,9 @@
+server:
+  port: 9897
+spring:
+  rabbitmq:
+    virtual-host: /
+    host: 192.168.21.128
+    username: admin
+    password: admin
+    port: 5672

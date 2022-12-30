@@ -26,6 +26,10 @@
         <module>cloud-config-center-3344</module>
         <module>cloud-config-client-3355</module>
         <module>cloud-config-client-3366</module>
+        <module>rabbitmq-demo</module>
+        <module>cloud-rabbitmq-producer</module>
+        <module>cloud-rabbitmq-consumer</module>
+        <module>stream-springboot</module>
     </modules>
     <packaging>pom</packaging>
 
